@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "course-scheduler-core"
+version = "0.1.0"
+description = "Core logic for Course Scheduler UC"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "requests",
+  "tqdm",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["course_scheduler*"]
