@@ -190,3 +190,8 @@ def generate_auto_schedule(
         allow_less=allow_less,
         block="B",
     )
+
+    return {
+        "bloque_a": {"courses": selected_a, "credits": credits_a},
+        "bloque_b": {"courses": selected_b, "credits": credits_b},
+    }
