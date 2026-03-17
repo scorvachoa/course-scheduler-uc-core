@@ -12,6 +12,8 @@ def _day_key(value: str) -> str:
     text = (value or "").strip().lower()
     if not text:
         return ""
+    text = text.replace("Ã¡", "á").replace("Ã©", "é").replace("Ã­", "í").replace("Ã³", "ó").replace("Ãº", "ú")
+    text = text.replace("Ã±", "ñ").replace("Ã", "Á").replace("Ã‰", "É").replace("Ã", "Í").replace("Ã“", "Ó").replace("Ãš", "Ú").replace("Ã‘", "Ñ")
     # Normalize accents to plain ascii
     replacements = {
         "á": "a",
