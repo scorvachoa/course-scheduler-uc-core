@@ -179,16 +179,14 @@ def generate_auto_schedule(
         allow_less=allow_less,
         block="A",
     )
+    keys_a = {course.course_key() or course.name for course in selected_a}
+    remaining_keys = selected_keys - keys_a
+
     selected_b, credits_b = _solve_block(
         courses,
-        selected_keys=selected_keys,
+        selected_keys=remaining_keys,
         allowed_days=allowed_days_set,
         target_credits=target_credits,
         allow_less=allow_less,
         block="B",
     )
-
-    return {
-        "bloque_a": {"courses": selected_a, "credits": credits_a},
-        "bloque_b": {"courses": selected_b, "credits": credits_b},
-    }
